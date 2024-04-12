@@ -23,8 +23,8 @@ public class ProductController {
         return ResponseHandler.CreateResponse("Product created successfully!",product, HttpStatus.OK);
     }
 
-    @GetMapping("/products?limit={limitVal}")
-    public  ResponseEntity<Object> fetchAllProducts(@RequestParam(name="limitVal",defaultValue = "10") int limit){
+    @GetMapping("/products")
+    public  ResponseEntity<Object> fetchAllProducts(){
         List<Product> products = productService.GetAllProducts();
         return ResponseHandler.CreateResponse("Products Fetched Successfully", products,HttpStatus.OK);
     }
